@@ -7,7 +7,7 @@ export default function Founders() {
     <section id="nosotras" className="bg-white py-[76px]">
       <div className="wrap">
         <SectionHead eyebrow="¿Quiénes somos?" title="Dos hermanas, no una plataforma anónima.">
-          <span className="block max-w-[640px]">
+          <span className="block">
             Somos NETA nació de una convicción: las PyMEs merecen el mismo nivel de servicio que las
             grandes empresas. Vimos que eso no existía, teníamos la experiencia para hacerlo bien, y
             decidimos construirlo nosotras. Cuando nos contratás, sabés exactamente quién está

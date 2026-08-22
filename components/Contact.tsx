@@ -60,14 +60,6 @@ export default function Contact() {
               >
                 Hablemos por WhatsApp
               </a>
-              <a
-                href="https://instagram.com/somos_neta"
-                className="btn btn-outline-light"
-                target="_blank"
-                rel="noopener"
-              >
-                Instagram
-              </a>
             </div>
           </div>
 

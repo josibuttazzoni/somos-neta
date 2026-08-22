@@ -9,7 +9,7 @@ export default function Problems() {
           eyebrow="El problema"
           title="Lo que pasa cuando los sueldos no son tu prioridad."
         />
-        <div className="grid gap-6 sm:grid-cols-2 min-[901px]:grid-cols-4">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-4">
           {problems.map((p) => (
             <div key={p.num} className="problem-card">
               <span className="num">{p.num}</span>

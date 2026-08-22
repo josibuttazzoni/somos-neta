@@ -44,7 +44,7 @@ export default function Services() {
           aria-expanded={scopeOpen}
           className="mt-9 flex items-center gap-2 text-sm font-medium text-gris-texto underline decoration-linea underline-offset-[3px] transition hover:text-noche"
         >
-          <span>¿Qué es lo que NO hacemos?</span>
+          <span className="text-2xl">¿Qué es lo que NO hacemos?</span>
           <svg
             width="14"
             height="14"
@@ -69,7 +69,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-4 flex flex-col items-start gap-6 rounded-2xl border border-[#b9c9c7]/55 bg-[#b9c9c7]/20 px-7 py-6 min-[701px]:flex-row min-[701px]:items-center min-[701px]:justify-between">
+        <div className="mt-8 flex flex-col items-start gap-6 rounded-2xl border border-[#b9c9c7]/55 bg-[#b9c9c7]/20 px-7 py-6 min-[701px]:flex-row min-[701px]:items-center min-[701px]:justify-between">
           <div>
             <h4 className="mb-1.5 text-[15px] font-semibold text-noche">¿Necesitás algo puntual?</h4>
             <p className="max-w-[520px] text-sm text-gris-texto">

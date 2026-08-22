@@ -12,8 +12,8 @@
 
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-dm-serif), Georgia, serif;
-  --font-cormorant: var(--font-cormorant), Georgia, serif;
-  --font-yaldevi: var(--font-yaldevi), sans-serif;
+  --font-cormorant: var(--font-cormorant-raw), Georgia, serif;
+  --font-yaldevi: var(--font-yaldevi-raw), sans-serif;
 }
 
 @layer base {
@@ -75,7 +75,7 @@
   }
   .firma .neta {
     font-family: var(--font-yaldevi);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-coral);
   }
 

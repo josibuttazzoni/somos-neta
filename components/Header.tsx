@@ -11,7 +11,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-linea bg-crema/90 backdrop-blur-md">
       <nav className="mx-auto flex max-w-[1180px] items-center justify-between px-8 py-5">
         <a href="#" className="firma" aria-label="Somos NETA">
-          <Image src="/img/logo.svg" alt="Somos NETA." width={474} height={126} className="h-[26px] w-auto" priority />
+          <Image src="/img/logo.svg" alt="Somos NETA." width={120} height={26} priority />
         </a>
 
         <div className="hidden items-center gap-9 min-[901px]:flex">

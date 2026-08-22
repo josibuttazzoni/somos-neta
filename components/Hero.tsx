@@ -43,9 +43,6 @@ export default function Hero() {
             >
               Hablemos por WhatsApp
             </a>
-            <a href="#servicios" className="btn btn-ghost justify-center">
-              Conocé cómo trabajamos
-            </a>
           </div>
         </div>
 
