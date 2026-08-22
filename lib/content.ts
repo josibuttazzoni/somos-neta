@@ -149,14 +149,14 @@ export const processSteps = [
 export const founders = [
   {
     name: "Cami",
-    photo: "/img/cami.png",
+    photo: "/img/cami.webp",
     role: "Lic. en Administración · Especialista en Liquidación",
     bio:
       "“Antes de que recibas la liquidación, pasa por mis manos: reviso cada número, cada aporte y cada presentación para que no tengas sorpresas.”",
   },
   {
     name: "Male",
-    photo: "/img/male.png",
+    photo: "/img/male.webp",
     role: "Especialista en Gestión Administrativa y Financiera",
     bio:
       "“Me ocupo de la parte operativa del día a día. Soy tu contacto directo acá: hago el seguimiento mes a mes y respondo cada consulta que tengas.”",

@@ -20,7 +20,7 @@ export default function Founders() {
           {founders.map((f) => (
             <div key={f.name} className="founder-card">
               <div className="founder-photo">
-                <Image src={f.photo} alt={f.name} width={1023} height={1300} />
+                <Image src={f.photo} alt={f.name} width={900} height={1144} sizes="(max-width: 900px) 100vw, 250px" />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center px-6 py-[26px]">
                 <div className="stat-num text-[26px] text-noche">{f.name}</div>
