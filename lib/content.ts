@@ -188,27 +188,42 @@ export const whyItems = [
 export const testimonialQuote =
   "Armamos nuestro propio camino porque creemos que las PyMEs merecen un mejor servicio. Buscamos los primeros clientes que quieran crecer con nosotras — y a quienes podamos demostrarles, mes a mes, por qué valió la pena elegirnos.";
 
+const newsBadge = {
+  alto: { badge: "Impacto alto", badgeClass: "bg-[#F5E3DE] text-coral" },
+  aplicacion: { badge: "En aplicación", badgeClass: "bg-[#FBEAD6] text-[#9A5B14]" },
+  implementado: { badge: "Implementado", badgeClass: "bg-[#DFF0DC] text-[#3C7A3C]" },
+} as const;
+
 export const news = [
   {
-    badge: "Impacto alto",
-    badgeClass: "bg-[#F5E3DE] text-coral",
+    ...newsBadge.alto,
     date: "Marzo 2026",
-    title: "Reforma Laboral Ley 27.802",
-    body: "FAL, nuevas indemnizaciones, pago por cuenta bancaria.",
+    title: "Reforma Laboral: nuevas reglas",
+    body: "Cambios relevantes en registración, relaciones laborales, negociación colectiva y costos laborales.",
   },
   {
-    badge: "En seguimiento",
-    badgeClass: "bg-[#E6ECEA] text-petroleo",
-    date: "Abril 2026",
+    ...newsBadge.aplicacion,
+    date: "Julio 2026",
     title: "Paritaria Empleados de Comercio",
-    body: "5% remunerativo más suma no remunerativa.",
+    body: "Nuevo incremento del 5,7% y actualización de las sumas no remunerativas.",
   },
   {
-    badge: "Implementado",
-    badgeClass: "bg-[#DFF0DC] text-[#3C7A3C]",
+    ...newsBadge.implementado,
+    date: "Agosto 2026",
+    title: "Nuevas escalas del monotributo (+16,8%)",
+    body: "Subieron los topes de facturación y las cuotas en las 11 categorías. La recategorización estuvo habilitada hasta el 5/8.",
+  },
+  {
+    ...newsBadge.alto,
+    date: "Junio 2026",
+    title: "Nuevo esquema de registración laboral",
+    body: "La registración de los trabajadores se centraliza ante ARCA y se simplifican las obligaciones registrales.",
+  },
+  {
+    ...newsBadge.implementado,
     date: "Enero 2026",
     title: "ARCA reemplaza a AFIP",
-    body: "Nueva interfaz y denominación del organismo.",
+    body: "Nueva estructura y denominación del organismo de recaudación.",
   },
 ];
 

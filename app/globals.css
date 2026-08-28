@@ -530,6 +530,15 @@
     width: 20px;
     border-radius: 4px;
   }
+  .news-track {
+    scroll-behavior: smooth;
+    /* Evita que el swipe horizontal dispare el "atrás" del navegador. */
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .news-track::-webkit-scrollbar {
+    display: none;
+  }
   .news-card {
     background: #fff;
     border: 1px solid var(--color-linea);
