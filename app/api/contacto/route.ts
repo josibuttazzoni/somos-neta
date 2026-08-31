@@ -48,11 +48,34 @@ export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
   const from = process.env.CONTACT_FROM;
+  const isLocalDev = process.env.NODE_ENV !== "production";
 
   if (!apiKey || !to || !from) {
-    // Si falta configuración preferimos fallar visiblemente antes que perder la consulta.
-    console.error("[contacto] faltan RESEND_API_KEY / CONTACT_TO / CONTACT_FROM");
-    return NextResponse.json({ error: "El envío no está configurado." }, { status: 500 });
+    const missing = [
+      !apiKey ? "RESEND_API_KEY" : null,
+      !to ? "CONTACT_TO" : null,
+      !from ? "CONTACT_FROM" : null,
+    ]
+      .filter(Boolean)
+      .join(", ");
+
+    console.warn(`[contacto] faltan variables de email: ${missing}`);
+
+    if (isLocalDev) {
+      return NextResponse.json({
+        ok: true,
+        dev: true,
+        message: "Modo desarrollo: no hay Resend configurado. Completa .env.local para enviar mails reales.",
+      });
+    }
+
+    return NextResponse.json(
+      {
+        error:
+          "El envío no está configurado. Revisa RESEND_API_KEY, CONTACT_TO y CONTACT_FROM.",
+      },
+      { status: 500 }
+    );
   }
 
   const rows: [string, string][] = [
@@ -77,8 +100,14 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error("[contacto] resend:", error);
-      return NextResponse.json({ error: "No pudimos enviar la consulta." }, { status: 502 });
+      console.error("[contacto] resend:", JSON.stringify(error));
+      return NextResponse.json(
+        {
+          error: "No pudimos enviar la consulta.",
+          ...(isLocalDev ? { detail: error } : {}),
+        },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ ok: true });
