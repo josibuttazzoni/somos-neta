@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { pricingBullets, pricingTiers, wa } from "@/lib/content";
+import {
+  pricingBullets,
+  pricingMinimum,
+  pricingMinimumLabel,
+  pricingTiers,
+  wa,
+} from "@/lib/content";
 import SectionHead from "./SectionHead";
 
 export default function Pricing() {
@@ -9,6 +15,7 @@ export default function Pricing() {
 
   const tier = pricingTiers.find((t) => employees <= t.max)!;
   const pct = Math.min(100, (employees / 50) * 100);
+  const belowMinimum = employees * tier.value < pricingMinimum;
 
   return (
     <section id="precios" className="bg-white py-[76px]">
@@ -41,9 +48,15 @@ export default function Pricing() {
           </div>
 
           <div>
-            <div className="stat-num mb-4 text-[28px] text-petroleo">
+            <div className="stat-num mb-2 text-[28px] text-petroleo">
               Desde {tier.price} por empleado
             </div>
+
+            <p className="mb-4 text-[13px] text-gris-texto">
+              {belowMinimum
+                ? `Con un equipo de este tamaño aplica la facturación mínima de ${pricingMinimumLabel} por mes.`
+                : `Facturación mínima de ${pricingMinimumLabel} por mes.`}
+            </p>
 
             <div className="mb-2">
               <div className="relative h-2.5 rounded-full border border-linea bg-crema">

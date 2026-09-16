@@ -230,29 +230,43 @@ export const news = [
 export const pricingTiers = [
   {
     max: 5,
+    value: 18000,
     price: "$18.000",
     desc: "El punto de partida — liquidación completa desde el primer empleado.",
   },
   {
     max: 10,
+    value: 16500,
     price: "$16.500",
     desc: "Con este tamaño de equipo, tu costo por empleado ya bajó del tramo inicial.",
   },
-  { max: 20, price: "$15.000", desc: "A este ritmo de crecimiento, seguís bajando de tramo." },
+  {
+    max: 20,
+    value: 15500,
+    price: "$15.500",
+    desc: "A este ritmo de crecimiento, seguís bajando de tramo.",
+  },
   {
     max: 40,
-    price: "$13.500",
+    value: 14500,
+    price: "$14.500",
     desc: "Con un equipo de este tamaño, el costo por empleado sigue cayendo.",
   },
   {
     max: Infinity,
-    price: "$12.000",
+    value: 14000,
+    price: "$14.000",
     desc: "En este volumen, tu costo por empleado llega a su valor más bajo.",
   },
 ];
 
+// Piso de facturación mensual, independiente de la cantidad de empleados.
+export const pricingMinimum = 60000;
+export const pricingMinimumLabel = "$60.000";
+
 export const pricingBullets = [
   "Precio por empleado, no por empresa",
   "Baja automáticamente por tramo a medida que crecés",
+  `Facturación mínima de ${pricingMinimumLabel} por mes`,
   "Actualización trimestral por inflación, nunca sorpresas",
 ];
