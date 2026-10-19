@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Serif_Display, Outfit, Yaldevi } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/lib/content";
 import "./globals.css";
 
@@ -55,7 +56,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="es"
       className={`${outfit.variable} ${dmSerif.variable} ${cormorant.variable} ${yaldevi.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
       {process.env.NEXT_PUBLIC_GTM_ID ? (
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
       ) : null}
