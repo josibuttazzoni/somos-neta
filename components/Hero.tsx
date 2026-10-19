@@ -37,6 +37,7 @@ export default function Hero() {
           <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:justify-between">
             <a
               href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
+              data-ubicacion="hero"
               className="btn btn-primary justify-center"
               target="_blank"
               rel="noopener"

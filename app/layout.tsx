@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Serif_Display, Outfit, Yaldevi } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { SITE_URL } from "@/lib/content";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -29,6 +31,8 @@ const yaldevi = Yaldevi({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: "Somos NETA — Liquidación de sueldos para PyMEs",
   description:
     "Liquidación de sueldos y gestión laboral para PyMEs argentinas: recibos, cargas sociales, legajos y novedades.",
@@ -52,6 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${outfit.variable} ${dmSerif.variable} ${cormorant.variable} ${yaldevi.variable}`}
     >
       <body>{children}</body>
+      {process.env.NEXT_PUBLIC_GTM_ID ? (
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+      ) : null}
     </html>
   );
 }

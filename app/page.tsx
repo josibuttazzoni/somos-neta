@@ -1,5 +1,6 @@
 import Contact from "@/components/Contact";
 import CustomCursor from "@/components/CustomCursor";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 import Founders from "@/components/Founders";
 import Header from "@/components/Header";
@@ -30,6 +31,7 @@ export default function Home() {
       <Pricing />
       <Contact />
       <Footer />
+      <FloatingWhatsApp />
       <ScrollReveal />
       <CustomCursor />
     </>

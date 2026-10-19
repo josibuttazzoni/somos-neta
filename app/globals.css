@@ -552,13 +552,6 @@
     }
   }
 
-  /* Estimador */
-  .est-slider {
-    flex: 1;
-    accent-color: var(--color-petroleo);
-    height: 4px;
-  }
-
   /* Formulario */
   .form-field {
     background: rgba(251, 248, 243, 0.06);

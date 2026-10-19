@@ -6,6 +6,7 @@ type Payload = {
   empresa?: string;
   email?: string;
   empleados?: string;
+  telefono?: string;
   mensaje?: string;
 };
 
@@ -32,6 +33,7 @@ export async function POST(request: Request) {
   const empresa = clean(body.empresa);
   const email = clean(body.email);
   const empleados = clean(body.empleados);
+  const telefono = clean(body.telefono);
   const mensaje = clean(body.mensaje);
 
   if (!nombre || !empresa || !email) {
@@ -82,6 +84,7 @@ export async function POST(request: Request) {
     ["Nombre", nombre],
     ["Empresa", empresa],
     ["Email", email],
+    ["Teléfono", telefono || "—"],
     ["Empleados", empleados || "—"],
     ["Mensaje", mensaje || "—"],
   ];

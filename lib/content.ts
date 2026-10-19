@@ -7,7 +7,7 @@ export const navLinks = [
   { href: "#servicios", label: "Servicios" },
   { href: "#nosotras", label: "Nosotras" },
   { href: "#novedades", label: "Novedades" },
-  { href: "#precios", label: "Precios" },
+  { href: "#precios", label: "Propuesta" },
 ];
 
 export const heroBenefits = [
@@ -227,46 +227,15 @@ export const news = [
   },
 ];
 
-export const pricingTiers = [
-  {
-    max: 5,
-    value: 18000,
-    price: "$18.000",
-    desc: "El punto de partida — liquidación completa desde el primer empleado.",
-  },
-  {
-    max: 10,
-    value: 16500,
-    price: "$16.500",
-    desc: "Con este tamaño de equipo, tu costo por empleado ya bajó del tramo inicial.",
-  },
-  {
-    max: 20,
-    value: 15500,
-    price: "$15.500",
-    desc: "A este ritmo de crecimiento, seguís bajando de tramo.",
-  },
-  {
-    max: 40,
-    value: 14500,
-    price: "$14.500",
-    desc: "Con un equipo de este tamaño, el costo por empleado sigue cayendo.",
-  },
-  {
-    max: Infinity,
-    value: 14000,
-    price: "$14.000",
-    desc: "En este volumen, tu costo por empleado llega a su valor más bajo.",
-  },
+export const pricingFactors = [
+  "La cantidad de empleados",
+  "El convenio que se aplica",
+  "La complejidad de tu operación",
+  "Los servicios que necesites",
 ];
 
-// Piso de facturación mensual, independiente de la cantidad de empleados.
-export const pricingMinimum = 60000;
-export const pricingMinimumLabel = "$60.000";
+export const empleadosTramos = ["1 a 5", "6 a 10", "11 a 20", "21 a 40", "Más de 40"];
 
-export const pricingBullets = [
-  "Precio por empleado, no por empresa",
-  "Baja automáticamente por tramo a medida que crecés",
-  `Facturación mínima de ${pricingMinimumLabel} por mes`,
-  "Actualización trimestral por inflación, nunca sorpresas",
-];
+export const SITE_URL = "https://www.somosneta.com.ar";
+export const CONTACT_EMAIL = "info@somosneta.com.ar";
+export const WA_DISPLAY = "+54 9 11 2491-5916";

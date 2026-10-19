@@ -16,8 +16,9 @@ export default function ScrollReveal() {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            window.setTimeout(() => entry.target.classList.add("in-view"), i * 60);
+          // `top < 0`: ya quedó por encima del viewport (salto por ancla); se muestra igual.
+          if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+            window.setTimeout(() => entry.target.classList.add("in-view"), Math.min(i, 4) * 60);
             io.unobserve(entry.target);
           }
         });
@@ -26,7 +27,28 @@ export default function ScrollReveal() {
     );
 
     targets.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    // Al saltar a una sección por ancla, su contenido se muestra de inmediato.
+    const revealHash = () => {
+      const target = document.querySelector(window.location.hash || "#none");
+      target?.querySelectorAll(".reveal").forEach((el) => el.classList.add("in-view"));
+    };
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
+      if (!a) return;
+      document
+        .querySelector(a.getAttribute("href")!)
+        ?.querySelectorAll(".reveal")
+        .forEach((el) => el.classList.add("in-view"));
+    };
+    revealHash();
+    document.addEventListener("click", onClick);
+    window.addEventListener("hashchange", revealHash);
+    return () => {
+      io.disconnect();
+      document.removeEventListener("click", onClick);
+      window.removeEventListener("hashchange", revealHash);
+    };
   }, []);
 
   return null;

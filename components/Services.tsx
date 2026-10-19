@@ -80,6 +80,7 @@ export default function Services() {
           </div>
           <a
             href={wa("Hola Somos NETA, quiero consultar por un servicio puntual")}
+            data-ubicacion="servicio_puntual"
             className="btn btn-ghost whitespace-nowrap"
             target="_blank"
             rel="noopener"

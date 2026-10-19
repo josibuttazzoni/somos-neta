@@ -26,6 +26,7 @@ export default function Header() {
           ))}
           <a
             href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
+            data-ubicacion="menu"
             className="btn btn-primary !px-[22px] !py-[10px]"
             target="_blank"
             rel="noopener"
@@ -62,6 +63,7 @@ export default function Header() {
           ))}
           <a
             href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
+            data-ubicacion="menu"
             className="btn btn-primary mt-2 justify-center"
             target="_blank"
             rel="noopener"
