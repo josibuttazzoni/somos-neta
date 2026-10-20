@@ -8,7 +8,7 @@ export default function Hero() {
         <div>
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-linea bg-white px-4 py-2 text-[13px] font-medium">
             <span className="animate-pulse-dot h-2 w-2 rounded-full bg-coral" />
-            Liquidación de sueldos para PyMEs argentinas
+            Liquidación de sueldos para PyMEs y estudios contables argentinos
           </div>
 
           <h1 className="mb-6 text-[38px] min-[901px]:text-[56px]">

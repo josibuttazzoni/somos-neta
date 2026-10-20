@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="wrap flex flex-col gap-8 text-[13px] text-gris-texto min-[801px]:flex-row min-[801px]:justify-between">
         <div className="flex flex-col gap-4">
           <Image src="/img/logo.svg" alt="Somos NETA." width={474} height={126} className="h-8 w-auto" />
-          <p>Liquidamos sueldos para PyMEs.</p>
+          <p>Liquidamos sueldos para PyMEs y estudios contables.</p>
         </div>
 
         <div className="flex flex-col gap-2 min-[801px]:items-end">

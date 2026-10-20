@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Serif_Display, Outfit, Yaldevi } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import TrackWhatsApp from "@/components/TrackWhatsApp";
 import { SITE_URL } from "@/lib/content";
 import "./globals.css";
 
@@ -34,9 +35,9 @@ const yaldevi = Yaldevi({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: "/" },
-  title: "Somos NETA — Liquidación de sueldos para PyMEs",
+  title: "Somos NETA — Liquidación de sueldos para PyMEs y estudios contables",
   description:
-    "Liquidación de sueldos y gestión laboral para PyMEs argentinas: recibos, cargas sociales, legajos y novedades.",
+    "Liquidación de sueldos y gestión laboral para PyMEs y estudios contables argentinos: recibos, cargas sociales, legajos y novedades.",
   manifest: "/favicon/site.webmanifest",
   icons: {
     icon: [
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Analytics />
+        <TrackWhatsApp />
       </body>
       {process.env.NEXT_PUBLIC_GTM_ID ? (
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
