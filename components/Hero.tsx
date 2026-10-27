@@ -18,7 +18,7 @@ export default function Hero() {
           </h1>
 
           <p className="mb-9 max-w-[560px] text-[19px] font-light text-gris-texto">
-            Nos encargamos de la liquidación de sueldos y la gestión laboral de tu PyME o estudio, recibos,
+            Nos encargamos de la liquidación de sueldos y la gestión laboral de tu PyME o estudio. Recibos,
             cargas sociales, legajos y novedades — para que dejes de improvisar cada fin de mes y
             tengas siempre a alguien de confianza del otro lado.
           </p>

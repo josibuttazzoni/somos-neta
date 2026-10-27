@@ -6,7 +6,6 @@ type Payload = {
   rubro?: string;
   liquidaciones_por_mes?: string;
   nombre?: string;
-  empresa?: string;
   email?: string;
   empleados?: string;
   telefono?: string;
@@ -32,20 +31,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Body inválido." }, { status: 400 });
   }
 
-  const sos = body.sos === "estudio" || body.sos === "otro" ? body.sos : "empresa";
+  const sos = body.sos === "estudio" ? "estudio" : "empresa";
   const esEstudio = sos === "estudio";
   const rubro = esEstudio ? "" : clean(body.rubro);
   const liquidaciones = esEstudio ? clean(body.liquidaciones_por_mes) : "";
   const nombre = clean(body.nombre);
-  const empresa = clean(body.empresa);
   const email = clean(body.email);
   const empleados = esEstudio ? "" : clean(body.empleados);
   const telefono = clean(body.telefono);
   const mensaje = clean(body.mensaje);
 
-  if (!nombre || !empresa || !email) {
+  if (!nombre || !email) {
     return NextResponse.json(
-      { error: "Faltan datos: nombre, empresa y email son obligatorios." },
+      { error: "Faltan datos: nombre y email son obligatorios." },
       { status: 400 }
     );
   }
@@ -87,11 +85,10 @@ export async function POST(request: Request) {
     );
   }
 
-  const sosLabel = { empresa: "Una empresa", estudio: "Un estudio contable", otro: "Otro" }[sos];
+  const sosLabel = { empresa: "Una empresa", estudio: "Un estudio contable" }[sos];
   const rows: [string, string][] = [
     ["Sos", sosLabel],
     ["Nombre", nombre],
-    ["Empresa o estudio", empresa],
     ["Email", email],
     ["Teléfono", telefono || "—"],
     ...(esEstudio
@@ -109,7 +106,7 @@ export async function POST(request: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Consulta ${esEstudio ? "estudio" : "empresa"}: ${nombre} — ${empresa}`,
+      subject: `Consulta ${esEstudio ? "estudio" : "empresa"}: ${nombre}`,
       text: rows.map(([k, v]) => `${k}: ${v}`).join("\n"),
       html: `<h2>Nueva consulta desde la web</h2>${rows
         .map(([k, v]) => `<p><strong>${k}:</strong> ${escape(v).replace(/\n/g, "<br>")}</p>`)

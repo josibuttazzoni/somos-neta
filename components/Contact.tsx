@@ -9,7 +9,6 @@ type Status = "idle" | "sending" | "sent" | "error";
 const sosOptions: { value: Sos; label: string }[] = [
   { value: "empresa", label: "Una empresa" },
   { value: "estudio", label: "Un estudio contable" },
-  { value: "otro", label: "Otro" },
 ];
 
 export default function Contact() {
@@ -37,7 +36,6 @@ export default function Contact() {
         body: JSON.stringify({
           sos,
           nombre: data.get("nombre"),
-          empresa: data.get("empresa"),
           email: data.get("email"),
           rubro: data.get("rubro"),
           empleados: data.get("empleados"),
@@ -100,12 +98,12 @@ export default function Contact() {
           ) : (
             <form className="flex flex-col gap-3.5" onSubmit={onSubmit}>
               <fieldset className="flex flex-col gap-2">
-                <legend className="mb-2 text-[13px] font-medium text-crema/70">Sos…</legend>
+                <legend className="mb-3 text-base font-medium text-crema">Sos…</legend>
                 <div className="flex flex-wrap gap-2">
                   {sosOptions.map((o) => (
                     <label
                       key={o.value}
-                      className={`cursor-pointer rounded-full border px-4 py-2 text-[13.5px] transition ${
+                      className={`cursor-pointer flex-1 rounded-full border px-5 py-3.5 text-center text-[15px] font-medium transition min-[561px]:flex-none min-[561px]:py-2.5 ${
                         sos === o.value
                           ? "border-coral bg-coral text-noche"
                           : "border-crema/20 text-crema/80 hover:border-coral"
@@ -131,15 +129,6 @@ export default function Contact() {
                 placeholder="Nombre"
                 aria-label="Nombre"
                 autoComplete="name"
-                required
-              />
-              <input
-                className="form-field"
-                name="empresa"
-                type="text"
-                placeholder="Empresa o estudio"
-                aria-label="Empresa o estudio"
-                autoComplete="organization"
                 required
               />
               <input

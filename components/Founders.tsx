@@ -8,11 +8,13 @@ export default function Founders() {
       <div className="wrap">
         <SectionHead eyebrow="¿Quiénes somos?" title="Dos hermanas, no una plataforma anónima.">
           <span className="block">
-            Somos NETA nació de una convicción: las PyMEs merecen el mismo nivel de servicio que las
-            grandes empresas. Vimos que eso no existía, teníamos la experiencia para hacerlo bien, y
-            decidimos construirlo nosotras. Cuando nos contratás, sabés exactamente quién está
-            manejando la información de tu empresa y de tu gente — no es un número de ticket, somos
-            nosotras dos.
+            Somos NETA nació de una convicción: las PyMEs y los estudios contables merecen un
+            servicio cercano, confiable y de calidad. Unimos nuestra experiencia para acompañarlos
+            en la liquidación de sueldos y la gestión laboral, con compromiso y atención
+            personalizada.
+          </span>
+          <span className="mt-4 block">
+            Cuando trabajás con NETA, sabés quién está del otro lado: somos nosotras dos.
           </span>
         </SectionHead>
 

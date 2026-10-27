@@ -237,9 +237,6 @@ export const whyItems = [
   },
 ];
 
-export const testimonialQuote =
-  "Armamos nuestro propio camino porque creemos que las PyMEs merecen un mejor servicio. Buscamos los primeros clientes que quieran crecer con nosotras — y a quienes podamos demostrarles, mes a mes, por qué valió la pena elegirnos.";
-
 const newsBadge = {
   alto: { badge: "Impacto alto", badgeClass: "bg-[#F5E3DE] text-coral" },
   aplicacion: { badge: "En aplicación", badgeClass: "bg-[#FBEAD6] text-[#9A5B14]" },
@@ -286,7 +283,7 @@ export const pricingFactors = [
   "Los servicios que necesites",
 ];
 
-export type Sos = "empresa" | "estudio" | "otro";
+export type Sos = "empresa" | "estudio";
 export const SOS_EVENT = "neta:sos";
 
 export const empleadosTramos = ["1 a 5", "6 a 10", "11 a 20", "21 a 40", "Más de 40"];

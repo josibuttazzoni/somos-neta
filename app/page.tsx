@@ -14,7 +14,6 @@ import Problems from "@/components/Problems";
 import Process from "@/components/Process";
 import ScrollReveal from "@/components/ScrollReveal";
 import Services from "@/components/Services";
-import Testimonial from "@/components/Testimonial";
 import Why from "@/components/Why";
 
 export default function Home() {
@@ -30,7 +29,6 @@ export default function Home() {
       <Process />
       <Founders />
       <Why />
-      <Testimonial />
       <News />
       <Pricing />
       <Contact />
