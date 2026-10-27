@@ -1,4 +1,4 @@
-import { heroBenefits, payslip, wa } from "@/lib/content";
+import { heroBenefits, payslip, WA_EMPRESA } from "@/lib/content";
 import PayslipCard from "./PayslipCard";
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
           </h1>
 
           <p className="mb-9 max-w-[560px] text-[19px] font-light text-gris-texto">
-            Nos encargamos de la liquidación de sueldos y la gestión laboral de tu PyME — recibos,
+            Nos encargamos de la liquidación de sueldos y la gestión laboral de tu PyME o estudio, recibos,
             cargas sociales, legajos y novedades — para que dejes de improvisar cada fin de mes y
             tengas siempre a alguien de confianza del otro lado.
           </p>
@@ -34,15 +34,21 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:justify-between">
+          <div className="mx-auto mb-14 grid w-full grid-cols-1 gap-3 sm:w-fit sm:grid-cols-2">
             <a
-              href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
-              data-ubicacion="hero"
-              className="btn btn-primary justify-center"
+              href={WA_EMPRESA}
+              data-ubicacion="hero_empresa"
+              className="btn btn-primary justify-center text-center whitespace-nowrap"
               target="_blank"
               rel="noopener"
             >
-              Hablemos por WhatsApp
+              Tengo una empresa
+            </a>
+            <a
+              href="#estudios"
+              className="btn btn-ghost justify-center text-center whitespace-nowrap"
+            >
+              Tengo un estudio contable
             </a>
           </div>
         </div>

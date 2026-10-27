@@ -6,7 +6,7 @@ export default function Problems() {
     <section id="problema" className="py-[76px]">
       <div className="wrap">
         <SectionHead
-          eyebrow="El problema"
+          eyebrow="SI TENÉS UNA EMPRESA"
           title="Lo que pasa cuando los sueldos no son tu prioridad."
         />
         <div className="grid gap-6 grid-cols-1 md:grid-cols-4">

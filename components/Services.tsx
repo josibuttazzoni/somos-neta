@@ -15,12 +15,12 @@ export default function Services() {
           title="Todo lo que hace un analista de sueldos, en tus manos."
           className="!mb-4"
         >
-          Gestionamos cada aspecto laboral de tu empresa.
+          Gestionamos cada aspecto laboral, para tu empresa o para los clientes de tu estudio.
         </SectionHead>
 
         <div className="mb-11 inline-flex items-center gap-[9px] rounded-full bg-petroleo/[0.06] py-[9px] pr-4 pl-3 text-[13px] font-medium leading-snug text-noche">
           <span className="animate-tracking h-[7px] w-[7px] shrink-0 rounded-full bg-coral" />
-          No es &ldquo;liquidamos y listo&rdquo; — hacemos seguimiento periódico de lo que pasa en tu
+          No es &ldquo;liquidamos y listo&rdquo; — hacemos seguimiento periódico de lo que pasa en cada
           empresa, mes a mes.
         </div>
 
@@ -64,8 +64,9 @@ export default function Services() {
           }`}
         >
           <p className="max-w-[600px] text-sm text-gris-texto">
-            No liquidamos impuestos, no hacemos balances contables ni gestionamos pagos o cuentas
-            bancarias. Nos especializamos en gestión laboral — y hacemos eso mejor que nadie.
+            Los impuestos, los balances y la contabilidad los sigue llevando tu contador o tu
+            estudio. Tampoco gestionamos pagos ni cuentas bancarias. Nos dedicamos solo a sueldos y
+            gestión laboral, y esa es nuestra especialidad.
           </p>
         </div>
 
@@ -73,9 +74,8 @@ export default function Services() {
           <div>
             <h4 className="mb-1.5 text-[15px] font-semibold text-noche">¿Necesitás algo puntual?</h4>
             <p className="max-w-[520px] text-sm text-gris-texto">
-              Liquidaciones finales complejas, auditorías de legajos, migraciones de sistema o
-              convenios poco frecuentes — consultanos por servicios extraordinarios, se cotizan
-              aparte.
+              Cada propuesta aclara qué está incluido en el abono y qué se cotiza aparte. Si
+              necesitás algo puntual, consultanos.
             </p>
           </div>
           <a

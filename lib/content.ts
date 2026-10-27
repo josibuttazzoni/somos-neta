@@ -2,9 +2,16 @@ export const WA_BASE = "https://wa.me/5491124915916";
 
 export const wa = (text: string) => `${WA_BASE}?text=${encodeURIComponent(text)}`;
 
+// Link A: empresas. Link B: estudios contables.
+export const WA_EMPRESA = wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa");
+export const WA_ESTUDIO = wa(
+  "Hola Somos NETA, tengo un estudio contable y quiero consultar por la liquidación de sueldos de mis clientes"
+);
+
 export const navLinks = [
   // El orden acompaña el orden de las secciones en la página.
   { href: "#servicios", label: "Servicios" },
+  { href: "#estudios", label: "Para estudios" },
   { href: "#nosotras", label: "Nosotras" },
   { href: "#novedades", label: "Novedades" },
   { href: "#precios", label: "Propuesta" },
@@ -44,10 +51,52 @@ export const marqueeTerms = [
   "F.931",
   "Libro Sueldos Digital",
   "Paritarias actualizadas",
-  "Ganancias 4ª categoría",
   "Inscripción en organismos de control",
   "Boletas sindicales",
   "Reforma Laboral 2026",
+];
+
+export const audienceCards = [
+  {
+    tag: "Para PyMEs",
+    title: "Si querés entender qué pagás en cada recibo",
+    items: [
+      "Te explicamos cada concepto y cuánto te cuesta cada empleado.",
+      "Una especialista revisa cada recibo antes de enviártelo.",
+      "Liquidamos según tu convenio, para evitar multas de ARCA y sindicatos.",
+    ],
+    cta: "Pedir propuesta",
+    href: "#contacto",
+  },
+  {
+    tag: "Para estudios contables",
+    title: "Si sueldos te consume horas que no te sobran",
+    items: [
+      "Funcionamos como el área de sueldos de tu estudio.",
+      "Calendario fijo de entrega: novedades y recibos con fecha cierta.",
+      "La relación con tu cliente sigue siendo tuya.",
+    ],
+    cta: "Ver cómo trabajamos",
+    href: "#estudios",
+  },
+];
+
+export const estudiosPoints = [
+  {
+    num: "01",
+    title: "Calendario fijo de entrega",
+    body: "Novedades y recibos con fecha cierta.",
+  },
+  {
+    num: "02",
+    title: "Tu cliente sigue siendo tuyo",
+    body: "La relación con tu cliente sigue siendo tuya.",
+  },
+  {
+    num: "03",
+    title: "Según el convenio de cada cliente",
+    body: "Liquidamos cada empresa con su convenio, para evitar multas de ARCA y sindicatos.",
+  },
 ];
 
 export const problems = [
@@ -87,6 +136,7 @@ export const services = [
       "Cálculo del sueldo bruto y neto de cada empleado",
       "Cálculo de aguinaldo (SAC) y vacaciones",
       "Liquidaciones especiales (despidos, licencias, etc.)",
+      "Liquidaciones finales y extraordinarias",
       "Recibos de sueldo digitales, listos para enviar",
     ],
   },
@@ -97,23 +147,25 @@ export const services = [
     hover: "hover-noche",
     items: [
       "Presentación mensual de cargas sociales",
-      "Boletas de aporte sindical",
-      "Certificados para ANSES y para cuando un empleado se va (Art. 80)",
+      "Boletas y declaraciones juradas de aportes sindicales",
+      "Certificados de servicios",
       "Altas y bajas de empleados ante ARCA",
-      "Alta en ART",
-      "Inscripción en organismo de control",
+      "Inscripción en organismos de control y ART",
+      "Respuesta a requerimientos y fiscalizaciones",
     ],
   },
   {
     num: "03",
     title: "Gestión de novedades",
-    sub: "Cada movimiento de tu empresa, documentado y en orden.",
+    sub: "Cada movimiento, documentado y en orden.",
     hover: "hover-coral",
     items: [
       "Recepción y gestión de novedades mensuales",
       "Cálculo de horas extras y plus vacacional",
       "Mantenimiento de legajos",
       "Gestión de consultas de empleados",
+      "Estimaciones de costos",
+      "Reportes de gestión",
     ],
   },
 ];
@@ -126,8 +178,8 @@ export const processSteps = [
   },
   {
     num: "02",
-    title: "Nos contás de tu empresa",
-    body: "Cuántos empleados tenés y qué convenio aplica en tu actividad.",
+    title: "Nos contás de tu empresa o de tu estudio",
+    body: "Qué rubro es, cuántos empleados o cuántas liquidaciones por mes, y qué convenios aplican.",
   },
   {
     num: "03",
@@ -233,6 +285,9 @@ export const pricingFactors = [
   "La complejidad de tu operación",
   "Los servicios que necesites",
 ];
+
+export type Sos = "empresa" | "estudio" | "otro";
+export const SOS_EVENT = "neta:sos";
 
 export const empleadosTramos = ["1 a 5", "6 a 10", "11 a 20", "21 a 40", "Más de 40"];
 

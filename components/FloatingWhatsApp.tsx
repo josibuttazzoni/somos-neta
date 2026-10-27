@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { wa } from "@/lib/content";
+import { WA_EMPRESA } from "@/lib/content";
 
 /** Botón flotante de WhatsApp: solo en pantallas chicas y después de la primera pantalla. */
 export default function FloatingWhatsApp() {
@@ -16,7 +16,7 @@ export default function FloatingWhatsApp() {
 
   return (
     <a
-      href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
+      href={WA_EMPRESA}
       data-ubicacion="flotante"
       target="_blank"
       rel="noopener"

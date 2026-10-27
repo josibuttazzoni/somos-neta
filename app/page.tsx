@@ -1,6 +1,8 @@
+import AudienceCards from "@/components/AudienceCards";
 import Contact from "@/components/Contact";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Estudios from "@/components/Estudios";
 import Footer from "@/components/Footer";
 import Founders from "@/components/Founders";
 import Header from "@/components/Header";
@@ -20,9 +22,11 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <AudienceCards />
       <Marquee />
       <Problems />
       <Services />
+      <Estudios />
       <Process />
       <Founders />
       <Why />

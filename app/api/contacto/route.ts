@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 type Payload = {
+  sos?: string;
+  rubro?: string;
+  liquidaciones_por_mes?: string;
   nombre?: string;
   empresa?: string;
   email?: string;
@@ -29,10 +32,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Body inválido." }, { status: 400 });
   }
 
+  const sos = body.sos === "estudio" || body.sos === "otro" ? body.sos : "empresa";
+  const esEstudio = sos === "estudio";
+  const rubro = esEstudio ? "" : clean(body.rubro);
+  const liquidaciones = esEstudio ? clean(body.liquidaciones_por_mes) : "";
   const nombre = clean(body.nombre);
   const empresa = clean(body.empresa);
   const email = clean(body.email);
-  const empleados = clean(body.empleados);
+  const empleados = esEstudio ? "" : clean(body.empleados);
   const telefono = clean(body.telefono);
   const mensaje = clean(body.mensaje);
 
@@ -80,12 +87,19 @@ export async function POST(request: Request) {
     );
   }
 
+  const sosLabel = { empresa: "Una empresa", estudio: "Un estudio contable", otro: "Otro" }[sos];
   const rows: [string, string][] = [
+    ["Sos", sosLabel],
     ["Nombre", nombre],
-    ["Empresa", empresa],
+    ["Empresa o estudio", empresa],
     ["Email", email],
     ["Teléfono", telefono || "—"],
-    ["Empleados", empleados || "—"],
+    ...(esEstudio
+      ? ([["Liquidaciones por mes", liquidaciones || "—"]] as [string, string][])
+      : ([
+          ["Rubro", rubro || "—"],
+          ["Empleados", empleados || "—"],
+        ] as [string, string][])),
     ["Mensaje", mensaje || "—"],
   ];
 
@@ -95,7 +109,7 @@ export async function POST(request: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Nueva consulta de ${nombre} — ${empresa}`,
+      subject: `Consulta ${esEstudio ? "estudio" : "empresa"}: ${nombre} — ${empresa}`,
       text: rows.map(([k, v]) => `${k}: ${v}`).join("\n"),
       html: `<h2>Nueva consulta desde la web</h2>${rows
         .map(([k, v]) => `<p><strong>${k}:</strong> ${escape(v).replace(/\n/g, "<br>")}</p>`)

@@ -1,14 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { empleadosTramos, wa } from "@/lib/content";
+import { empleadosTramos, SOS_EVENT, type Sos, wa } from "@/lib/content";
 
 type Status = "idle" | "sending" | "sent" | "error";
+
+const sosOptions: { value: Sos; label: string }[] = [
+  { value: "empresa", label: "Una empresa" },
+  { value: "estudio", label: "Un estudio contable" },
+  { value: "otro", label: "Otro" },
+];
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [sos, setSos] = useState<Sos>("empresa");
+
+  // Desde `#estudios` ("o completá el formulario") llega preseleccionado "estudio".
+  useEffect(() => {
+    const onSos = (e: Event) => setSos((e as CustomEvent<Sos>).detail);
+    window.addEventListener(SOS_EVENT, onSos);
+    return () => window.removeEventListener(SOS_EVENT, onSos);
+  }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,10 +35,13 @@ export default function Contact() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          sos,
           nombre: data.get("nombre"),
           empresa: data.get("empresa"),
           email: data.get("email"),
+          rubro: data.get("rubro"),
           empleados: data.get("empleados"),
+          liquidaciones_por_mes: data.get("liquidaciones_por_mes"),
           telefono: data.get("telefono"),
           mensaje: data.get("mensaje"),
         }),
@@ -53,8 +70,8 @@ export default function Contact() {
             <span className="eyebrow !text-coral">Contacto</span>
             <h2 className="mb-4 text-4xl text-crema">¿Hablamos?</h2>
             <p className="mb-8 text-base text-crema/70">
-              La primera consulta es sin cargo y sin compromiso. Contanos sobre tu PyME y te decimos
-              qué necesitás, cuánto cuesta y cómo arrancamos — sin vueltas.
+              La primera consulta es sin cargo y sin compromiso. Contanos sobre tu empresa o tu estudio y te decimos
+              qué necesitás y cómo arrancamos — sin vueltas.
             </p>
             <div className="flex flex-wrap gap-3.5">
               <a
@@ -82,6 +99,31 @@ export default function Contact() {
             </div>
           ) : (
             <form className="flex flex-col gap-3.5" onSubmit={onSubmit}>
+              <fieldset className="flex flex-col gap-2">
+                <legend className="mb-2 text-[13px] font-medium text-crema/70">Sos…</legend>
+                <div className="flex flex-wrap gap-2">
+                  {sosOptions.map((o) => (
+                    <label
+                      key={o.value}
+                      className={`cursor-pointer rounded-full border px-4 py-2 text-[13.5px] transition ${
+                        sos === o.value
+                          ? "border-coral bg-coral text-noche"
+                          : "border-crema/20 text-crema/80 hover:border-coral"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="sos"
+                        value={o.value}
+                        checked={sos === o.value}
+                        onChange={() => setSos(o.value)}
+                        className="sr-only"
+                      />
+                      {o.label}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
               <input
                 className="form-field"
                 name="nombre"
@@ -95,8 +137,8 @@ export default function Contact() {
                 className="form-field"
                 name="empresa"
                 type="text"
-                placeholder="Empresa"
-                aria-label="Empresa"
+                placeholder="Empresa o estudio"
+                aria-label="Empresa o estudio"
                 autoComplete="organization"
                 required
               />
@@ -117,21 +159,41 @@ export default function Contact() {
                 aria-label="WhatsApp o teléfono (opcional)"
                 autoComplete="tel"
               />
-              <select
-                className="form-field"
-                name="empleados"
-                aria-label="Cantidad de empleados"
-                defaultValue=""
-              >
-                <option value="" className="text-noche">
-                  Cantidad de empleados
-                </option>
-                {empleadosTramos.map((t) => (
-                  <option key={t} value={t} className="text-noche">
-                    {t}
-                  </option>
-                ))}
-              </select>
+              {sos === "estudio" ? (
+                <input
+                  className="form-field"
+                  name="liquidaciones_por_mes"
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="¿Cuántas liquidaciones hacés por mes?"
+                  aria-label="¿Cuántas liquidaciones hacés por mes?"
+                />
+              ) : (
+                <>
+                  <input
+                    className="form-field"
+                    name="rubro"
+                    type="text"
+                    placeholder="Contanos de qué rubro es tu empresa"
+                    aria-label="Rubro de tu empresa"
+                  />
+                  <select
+                    className="form-field"
+                    name="empleados"
+                    aria-label="Cantidad de empleados"
+                    defaultValue=""
+                  >
+                    <option value="" className="text-noche">
+                      Cantidad de empleados
+                    </option>
+                    {empleadosTramos.map((t) => (
+                      <option key={t} value={t} className="text-noche">
+                        {t}
+                      </option>
+                    ))}
+                  </select>
+                </>
+              )}
               <textarea
                 className="form-field"
                 name="mensaje"

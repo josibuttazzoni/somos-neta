@@ -7,7 +7,7 @@ export default function Why() {
       <div className="wrap">
         <SectionHead
           eyebrow="Por qué Somos NETA"
-          title="No somos un estudio más. Somos especialistas."
+          title="Para que fin de mes deje de ser una urgencia."
           dark
         />
         <div className="grid gap-9 pt-4 min-[901px]:grid-cols-2 min-[901px]:gap-x-9 min-[901px]:gap-y-11">

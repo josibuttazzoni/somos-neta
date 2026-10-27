@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { navLinks, wa } from "@/lib/content";
+import { navLinks, WA_EMPRESA } from "@/lib/content";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
+            href={WA_EMPRESA}
             data-ubicacion="menu"
             className="btn btn-primary !px-[22px] !py-[10px]"
             target="_blank"
@@ -62,7 +62,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={wa("Hola Somos NETA, quiero consultar por la liquidación de sueldos de mi empresa")}
+            href={WA_EMPRESA}
             data-ubicacion="menu"
             className="btn btn-primary mt-2 justify-center"
             target="_blank"

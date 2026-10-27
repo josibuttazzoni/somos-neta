@@ -6,7 +6,7 @@ export default function Pricing() {
     <section id="precios" className="bg-white py-[76px]">
       <div className="wrap">
         <SectionHead eyebrow="Precios" title="Claro desde el principio.">
-          Cada propuesta se arma a medida, sin letra chica. El valor depende de:
+          Para empresas y para estudios. Cada propuesta se arma a medida, sin letra chica. El valor depende de:
         </SectionHead>
 
         <ul className="max-w-[680px]">
