@@ -1,4 +1,4 @@
-import { heroBenefits, payslip, WA_EMPRESA } from "@/lib/content";
+import { heroBenefits, payslip } from "@/lib/content";
 import PayslipCard from "./PayslipCard";
 
 export default function Hero() {
@@ -35,19 +35,10 @@ export default function Hero() {
           </div>
 
           <div className="mx-auto mb-14 grid w-full grid-cols-1 gap-3 sm:w-fit sm:grid-cols-2">
-            <a
-              href={WA_EMPRESA}
-              data-ubicacion="hero_empresa"
-              className="btn btn-primary justify-center text-center whitespace-nowrap"
-              target="_blank"
-              rel="noopener"
-            >
+            <a href="#problema" className="btn btn-ghost justify-center text-center whitespace-nowrap">
               Tengo una empresa
             </a>
-            <a
-              href="#estudios"
-              className="btn btn-ghost justify-center text-center whitespace-nowrap"
-            >
+            <a href="#estudios" className="btn btn-ghost justify-center text-center whitespace-nowrap">
               Tengo un estudio contable
             </a>
           </div>

@@ -8,7 +8,7 @@ export default function StudioFormLink() {
     <a
       href="#contacto"
       onClick={() => window.dispatchEvent(new CustomEvent(SOS_EVENT, { detail: "estudio" }))}
-      className="text-[13.5px] text-crema/70 underline underline-offset-4 transition hover:text-coral"
+      className="text-[13.5px] text-gris-texto underline underline-offset-4 transition hover:text-coral"
     >
       o completá el formulario
     </a>

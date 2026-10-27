@@ -10,8 +10,9 @@ export const WA_ESTUDIO = wa(
 
 export const navLinks = [
   // El orden acompaña el orden de las secciones en la página.
-  { href: "#servicios", label: "Servicios" },
+  { href: "#problema", label: "Para empresas" },
   { href: "#estudios", label: "Para estudios" },
+  { href: "#servicios", label: "Servicios" },
   { href: "#nosotras", label: "Nosotras" },
   { href: "#novedades", label: "Novedades" },
   { href: "#precios", label: "Propuesta" },
@@ -58,19 +59,19 @@ export const marqueeTerms = [
 
 export const audienceCards = [
   {
-    tag: "Para PyMEs",
-    title: "Si querés entender qué pagás en cada recibo",
+    tag: "Para empresas",
+    title: "Si querés entender qué pagás en cada recibo.",
     items: [
       "Te explicamos cada concepto y cuánto te cuesta cada empleado.",
       "Una especialista revisa cada recibo antes de enviártelo.",
       "Liquidamos según tu convenio, para evitar multas de ARCA y sindicatos.",
     ],
-    cta: "Pedir propuesta",
-    href: "#contacto",
+    cta: "Ver cómo trabajamos",
+    href: "#problema",
   },
   {
-    tag: "Para estudios contables",
-    title: "Si sueldos te consume horas que no te sobran",
+    tag: "Para estudios",
+    title: "Si sueldos te consume horas que no te sobran.",
     items: [
       "Funcionamos como el área de sueldos de tu estudio.",
       "Calendario fijo de entrega: novedades y recibos con fecha cierta.",
@@ -189,7 +190,7 @@ export const processSteps = [
   {
     num: "04",
     title: "Te mandamos una propuesta",
-    body: "Clara, sin letra chica, ajustada a tu empresa.",
+    body: "Clara, sin letra chica, ajustada a lo que necesitás.",
   },
   {
     num: "05",
@@ -219,7 +220,7 @@ export const whyItems = [
   {
     title: "Actualizadas con la norma",
     body:
-      "Seguimos de cerca cada cambio normativo, paritaria y resolución de ARCA que pueda afectar a tu empresa.",
+      "Seguimos de cerca cada cambio normativo, paritaria y resolución de ARCA que pueda afectar a tu empresa o a los clientes de tu estudio.",
   },
   {
     title: "Respuesta rápida y directa",
@@ -228,12 +229,12 @@ export const whyItems = [
   },
   {
     title: "Atención personalizada",
-    body: "Siempre hablás con nosotras. Conocemos tu empresa, tu equipo y tu historia.",
+    body: "Siempre hablás con nosotras. Conocemos tu empresa o tu estudio, tu equipo y tu historia.",
   },
   {
     title: "Interpretación de convenios",
     body:
-      "Analizamos el CCT específico de tu rubro. Liquidar bien no es solo hacer cuentas — es entender la norma que aplica a tu actividad.",
+      "Analizamos el CCT específico de cada rubro. Liquidar bien no es solo hacer cuentas — es entender la norma que aplica a cada actividad.",
   },
 ];
 

@@ -24,8 +24,8 @@ export default function Home() {
       <AudienceCards />
       <Marquee />
       <Problems />
-      <Services />
       <Estudios />
+      <Services />
       <Process />
       <Founders />
       <Why />

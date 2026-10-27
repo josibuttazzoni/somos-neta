@@ -15,7 +15,7 @@ export default function Services() {
           title="Todo lo que hace un analista de sueldos, en tus manos."
           className="!mb-4"
         >
-          Gestionamos cada aspecto laboral, para tu empresa o para los clientes de tu estudio.
+          Gestionamos cada aspecto laboral de tu empresa.
         </SectionHead>
 
         <div className="mb-11 inline-flex items-center gap-[9px] rounded-full bg-petroleo/[0.06] py-[9px] pr-4 pl-3 text-[13px] font-medium leading-snug text-noche">
